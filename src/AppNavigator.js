@@ -66,7 +66,7 @@ function Main(props) {
       <MainStack.Screen
         name="ToolKit"
         component={ToolKitScreen}
-        options={{title: 'NFC TOOL KIT'}}
+        options={{title: 'NFCA TRANSCEIVE'}}
       />
       <MainStack.Screen
         name="TagKit"

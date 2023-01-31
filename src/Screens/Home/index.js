@@ -153,16 +153,7 @@ function HomeScreen(props) {
             }
           }}
           style={{marginBottom: 10}}>
-          READ TAGs
-        </Button>
-
-        <Button
-          mode="contained"
-          onPress={async () => {
-            navigation.navigate('NdefTypeList');
-          }}
-          style={{marginBottom: 10}}>
-          WRITE NDEF
+          READ TAG INFORMATION
         </Button>
 
         <Button
@@ -171,16 +162,7 @@ function HomeScreen(props) {
             navigation.navigate('ToolKit');
           }}
           style={{marginBottom: 10}}>
-          Tool Kit
-        </Button>
-
-        <Button
-          mode="contained"
-          onPress={async () => {
-            navigation.navigate('TagKit');
-          }}
-          style={{marginBottom: 10}}>
-          Tag Kit
+          NFCA TRANSCEIVE
         </Button>
 
         <Button
@@ -188,7 +170,7 @@ function HomeScreen(props) {
           onPress={async () => {
             navigation.navigate('SavedRecord');
           }}>
-          MY RECORDS
+          SAVED NFCA COMMANDS
         </Button>
       </View>
     );
