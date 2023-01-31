@@ -75,7 +75,7 @@ The NFC library is powered by <a href="https://github.com/facebook/react-native"
     - Erase all
     - Format to NDEF
   - NfcV
-    - Custom transceive 
+    - Custom transceive
   - IsoDep
     - Custom APDU (Android)
   - NdefFormatable (Android)
@@ -84,7 +84,7 @@ The NFC library is powered by <a href="https://github.com/facebook/react-native"
   - NXP NTAG21X
     - password protection
   - NXP NTAG424 DNA
-    - signature verification   
+    - signature verification
     - temper detection
   - SIC4310
     - rolling code verification
