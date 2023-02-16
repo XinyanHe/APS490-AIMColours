@@ -9,7 +9,7 @@ function ToolKitScreen(props) {
 
   return (
     <ScrollView style={{flex: 1, backgroundColor: 'white'}}>
-      <List.Section>
+      {/* <List.Section>
         <List.Subheader>Ndef</List.Subheader>
         <List.Item
           title="Make Read Only"
@@ -30,7 +30,7 @@ function ToolKitScreen(props) {
             }}
           />
         )}
-      </List.Section>
+      </List.Section> */}
 
       <List.Section>
         <List.Subheader>NfcA</List.Subheader>
@@ -62,7 +62,7 @@ function ToolKitScreen(props) {
         />
       </List.Section>
 
-      <List.Section>
+      {/* <List.Section>
         <List.Subheader>NfcV</List.Subheader>
         <List.Item
           title="Custom Transceive"
@@ -74,9 +74,9 @@ function ToolKitScreen(props) {
             })
           }
         />
-      </List.Section>
+      </List.Section> */}
 
-      <List.Section>
+      {/* <List.Section>
         <List.Subheader>IsoDep</List.Subheader>
         <List.Item
           title="Custom Transceive"
@@ -88,9 +88,9 @@ function ToolKitScreen(props) {
             })
           }
         />
-      </List.Section>
+      </List.Section> */}
 
-      <List.Section>
+      {/* <List.Section>
         <List.Subheader>Misc</List.Subheader>
         <List.Item
           title="Test registerTagEvent API"
@@ -103,7 +103,7 @@ function ToolKitScreen(props) {
             }
           }}
         />
-      </List.Section>
+      </List.Section> */}
     </ScrollView>
   );
 }
