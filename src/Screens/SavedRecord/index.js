@@ -7,6 +7,7 @@ import RecordItem from './RecordItem';
 import SaveRecordModal from '../../Components/SaveRecordModal';
 
 function groupRecordByTech(records) {
+  // console.log(records)
   const ndefRecords = [];
   const nfcARecords = [];
   const nfcVRecords = [];
@@ -23,6 +24,32 @@ function groupRecordByTech(records) {
       isoDepRecords.push({record, idx});
     }
   }
+
+  //Initialize every app with the presaved record
+  nfcARecords.push(
+    { record: 
+       { name: 'presaved record',
+         payload: 
+          { tech: 'NfcA',
+            value: 
+            [ { type: 'command', payload: [ 48, 4 ] },
+            { type: 'command', payload: [ 48, 8 ] },
+            { type: 'command', payload: [ 48, 12 ] },
+            { type: 'command', payload: [ 162, 4, 3, 39, 216, 15 ] },
+            { type: 'command', payload: [ 162, 5, 21, 97, 110, 100 ] },
+            { type: 'command', payload: [ 162, 6, 114, 111, 105, 100 ] },
+            { type: 'command', payload: [ 162, 7, 46, 99, 111, 109 ] },
+            { type: 'command', payload: [ 162, 8, 58, 112, 107, 103 ] },
+            { type: 'command', payload: [ 162, 9, 119, 97, 118, 101 ] },
+            { type: 'command', payload: [ 162, 10, 115, 104, 97, 114 ] },
+            { type: 'command', payload: [ 162, 11, 101, 46, 102, 101 ] },
+            { type: 'command', payload: [ 162, 12, 110, 103, 46, 110 ] },
+            { type: 'command', payload: [ 162, 13, 102, 99, 116, 97 ] },
+            { type: 'command', payload: [ 162, 14, 103, 254, 0, 0 ] } ] 
+          } 
+        },
+      idx: records.length })
+  
   return {
     ndefRecords,
     nfcARecords,
