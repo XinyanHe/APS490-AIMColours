@@ -16,6 +16,7 @@ import TagKitScreen from './Screens/TagKit';
 import CustomTransceiveScreen from './Screens/CustomTransceive';
 import SettingsScreen from './Screens/Settings';
 import SavedRecordScreen from './Screens/SavedRecord';
+import ColourSelectionScreen from './Screens/ColourSelection';
 import NfcPromptAndroid from './Components/NfcPromptAndroid';
 import Toast from './Components/Toast';
 
@@ -82,6 +83,11 @@ function Main(props) {
         name="SavedRecord"
         component={SavedRecordScreen}
         options={{title: 'MY SAVED RECORDS'}}
+      />
+      <MainStack.Screen
+        name="ColourSelection"
+        component={ColourSelectionScreen}
+        options={{title: 'NAIL COLOUR SELECTION'}}
       />
     </MainStack.Navigator>
   );

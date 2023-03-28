@@ -1,9 +1,17 @@
 import * as React from 'react';
-import {SafeAreaView, ScrollView, Alert} from 'react-native';
+import {
+  SafeAreaView,
+  ScrollView,
+  Alert,
+  Image,
+  View,
+  FlatList,
+  Dimensions,
+} from 'react-native';
 import {List, Button} from 'react-native-paper';
 import {NfcTech} from 'react-native-nfc-manager';
 import * as AppContext from '../../AppContext';
-import RecordItem from './RecordItem';
+import RecordItem from '../SavedRecord/RecordItem';
 import SaveRecordModal from '../../Components/SaveRecordModal';
 
 function groupRecordByTech(records) {
@@ -28,32 +36,6 @@ function groupRecordByTech(records) {
 /* ============================================================ */
 /* ===============THIS IS FOR DEBUGGING PURPOSES=============== */
 /* ============================================================ */
-  //Initialize every app with the presaved record
-  nfcARecords.push({
-    record: {
-      name: 'Initialize Module',
-      payload: {
-        tech: 'NfcA',
-        value: [
-          {type: 'command', payload: [48, 4]},
-          {type: 'command', payload: [48, 8]},
-          {type: 'command', payload: [48, 12]},
-          {type: 'command', payload: [162, 4, 3, 39, 216, 15]},
-          {type: 'command', payload: [162, 5, 21, 97, 110, 100]},
-          {type: 'command', payload: [162, 6, 114, 111, 105, 100]},
-          {type: 'command', payload: [162, 7, 46, 99, 111, 109]},
-          {type: 'command', payload: [162, 8, 58, 112, 107, 103]},
-          {type: 'command', payload: [162, 9, 119, 97, 118, 101]},
-          {type: 'command', payload: [162, 10, 115, 104, 97, 114]},
-          {type: 'command', payload: [162, 11, 101, 46, 102, 101]},
-          {type: 'command', payload: [162, 12, 110, 103, 46, 110]},
-          {type: 'command', payload: [162, 13, 102, 99, 116, 97]},
-          {type: 'command', payload: [162, 14, 103, 254, 0, 0]},
-        ],
-      },
-    },
-    idx: records.length,
-  });
 
   /* ============================================================ */
   /* ===================THIS IS FOR FUNCTION A=================== */
@@ -110,16 +92,16 @@ function groupRecordByTech(records) {
   // Generate Bitmap Function
   const bitmap_function_a = intialize_bitmap_function_a.concat(bitmap_a, end_bitmap_a, bitmap_closure_a)
 
-  nfcARecords.push({
-    record: {
-      name: 'Write Bitmap a',
-      payload: {
-        tech: 'NfcA',
-        value: bitmap_function_a,
-      },
-    },
-    idx: records.length,
-  });
+  // nfcARecords.push({
+  //   record: {
+  //     name: 'Write Bitmap a',
+  //     payload: {
+  //       tech: 'NfcA',
+  //       value: bitmap_function_a,
+  //     },
+  //   },
+  //   idx: records.length,
+  // });
 
   /* ============================================================ */
   /* ===================THIS IS FOR FUNCTION B=================== */
@@ -177,7 +159,7 @@ function groupRecordByTech(records) {
 
   nfcARecords.push({
     record: {
-      name: 'Write Bitmap red',
+      name: 'Red',
       payload: {
         tech: 'NfcA',
         value: bitmap_function_red,
@@ -206,7 +188,7 @@ function groupRecordByTech(records) {
 
   nfcARecords.push({
     record: {
-      name: 'Write Bitmap black',
+      name: 'Black',
       payload: {
         tech: 'NfcA',
         value: bitmap_function_black,
@@ -231,7 +213,7 @@ function groupRecordByTech(records) {
 
   nfcARecords.push({
     record: {
-      name: 'Write Bitmap r&b',
+      name: 'Red & Black',
       payload: {
         tech: 'NfcA',
         value: bitmap_function_red_and_black,
@@ -248,7 +230,7 @@ function groupRecordByTech(records) {
   };
 }
 
-function SavedRecordScreen(props) {
+function ColourSelectionScreen(props) {
   const {navigation} = props;
   const app = React.useContext(AppContext.Context);
   const recordList = app.state.storageCache;
@@ -401,4 +383,4 @@ function SavedRecordScreen(props) {
   );
 }
 
-export default SavedRecordScreen;
+export default ColourSelectionScreen;

@@ -166,6 +166,15 @@ function HomeScreen(props) {
         </Button>
 
         <Button
+          mode="contained"
+          onPress={async () => {
+            navigation.navigate('ColourSelection');
+          }}
+          style={{marginBottom: 10}}>
+          NAIL COLOUR SELECTION
+        </Button>
+
+        <Button
           mode="outlined"
           onPress={async () => {
             navigation.navigate('SavedRecord');
